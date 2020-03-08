@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:referral_app/widgets/candidates/details/candidates_details_page.dart';
 import 'package:referral_app/widgets/structure.dart';
 
 void main() => runApp(MyApp());
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Sans',
       ),
       home: Structure(),
+      //TODO: Implement route generator
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:referral_app/widgets/candidates/candidates.dart';
-import 'package:referral_app/widgets/candidates/candidates_list_page.dart';
+import 'package:referral_app/widgets/candidates/main_page/candidates.dart';
+import 'package:referral_app/widgets/candidates/main_page/candidates_list_page.dart';
 
 class Structure extends StatefulWidget {
   @override
@@ -55,25 +55,39 @@ class _StructureState extends State<Structure> {
   Widget bottomList(int index) {
     List<Candidates> mock_candidates = [ //!Mock data
     Candidates( 
-      date: '20 feb',
+      date: '26 Nov',
       name: 'Ricardo Van Lemmen',
       step: 'Register',
       points: 20,
-      background_color: Colors.purple,
+      backgroundColor: Color.fromRGBO(55, 120, 255, 1),
     ),
     Candidates( 
-      date: '20 feb',
-      name: 'omar Guerrero',
+      date: '2 Dec',
+      name: 'Omar Guerrero',
       step: 'Register',
       points: 10,
-      background_color: Colors.blue,
+      backgroundColor: Color.fromRGBO(218, 83, 44, 1),
     ),
     Candidates( 
-      date: '20 feb',
+      date: '3 Dec',
       name: 'Monika Rutten',
       step: 'Register',
       points: 30,
-      background_color: Colors.pink,
+      backgroundColor: Color.fromRGBO(178, 108, 238, 1),
+    ),
+    Candidates( 
+      date: '20 Feb',
+      name: 'Eef Smeets',
+      step: 'Register',
+      points: 30,
+      backgroundColor: Color.fromRGBO(255, 71, 114, 1),
+    ),
+    Candidates( 
+      date: '20 Mar',
+      name: 'Juanito Benitez',
+      step: 'Register',
+      points: 30,
+      backgroundColor: Color.fromRGBO(55, 120, 255, 1),
     ),
     ];
     List<Widget> list = [

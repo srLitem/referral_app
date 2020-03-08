@@ -9,12 +9,13 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(color: Colors.white),
       alignment: Alignment.topCenter,
       height: MediaQuery.of(context).size.height / 10,
       child: Padding(
         padding: EdgeInsets.only(
-          left: MediaQuery.of(context).size.width * 0.05,
-          right: MediaQuery.of(context).size.width * 0.05,
+          left: MediaQuery.of(context).size.width * 0.08,
+          right: MediaQuery.of(context).size.width * 0.08,
         ),
         child: Center(
           child: Row(

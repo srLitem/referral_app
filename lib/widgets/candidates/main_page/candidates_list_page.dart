@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:referral_app/widgets/candidates/candidates.dart';
+import 'package:referral_app/widgets/candidates/main_page/candidates.dart';
 import 'package:referral_app/widgets/header.dart';
 
 class CandidatesListPage extends StatelessWidget {
