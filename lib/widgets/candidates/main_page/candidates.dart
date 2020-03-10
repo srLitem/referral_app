@@ -8,7 +8,7 @@ class Candidates extends StatefulWidget {
   @required int points;
   @required Color backgroundColor;
 
-  Candidates(
+  Candidates( //!! This might change according to the designs
       {this.name, this.points, this.step, this.date, this.backgroundColor});
 
   @override
@@ -21,7 +21,12 @@ class _CandidatesState extends State<Candidates> {
     Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) =>
-            CandidatesDetailsPage(name: widget.name, backColor: widget.backgroundColor,),
+            CandidatesDetailsPage(
+              name: widget.name,
+              backColor: widget.backgroundColor,
+              points: widget.points,
+              date: widget.date,
+              ),
           ),
         );
   }

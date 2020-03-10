@@ -1,25 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:referral_app/widgets/candidates/details/candidates_details_info.dart';
 
 class CandidatesDetailsPage extends StatelessWidget {
   @required
   String name;
   @required
   Color backColor;
+  @required
+  int points;
+  @required
+  var date;
 
-  CandidatesDetailsPage({this.name, this.backColor});
+  CandidatesDetailsPage({this.name, this.backColor, this.points, this.date});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Center(
-          child: Text(
-            name,
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+      body: Stack(
+        children: <Widget>[
+          Container(
+            //* Background color
+            decoration: BoxDecoration(color: backColor),
           ),
-        ),
-        decoration: BoxDecoration(color: backColor),
+          Padding(
+            padding: EdgeInsets.all(30),
+            child: CandidatesDetailsInfo(name: name, date: date, points: points,), //* Information
+          ),
+        ],
       ),
+    );
+  }
+
+  TextStyle textStyling(double size, FontWeight weight) {
+    return TextStyle(
+      color: Colors.white,
+      fontWeight: weight,
+      fontSize: size,
     );
   }
 }
