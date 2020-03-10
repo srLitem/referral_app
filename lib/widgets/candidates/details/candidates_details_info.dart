@@ -12,19 +12,19 @@ class CandidatesDetailsInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List steps = [
+    List steps = [ //!! MOCK DATE, REMOVE WHEN USING REAL DATA
       {
         'step': 'Registration',
         'is_completed': true,
         'points': 25,
       },
       {
-        'step': 'Give love to the people',
+        'step': 'Being awesome',
         'is_completed': true,
         'points': 25,
       },
       {
-        'step': 'Eating the coockies',
+        'step': 'Eating kaas crackers',
         'is_completed': false,
         'points': 50,
       },
@@ -37,10 +37,21 @@ class CandidatesDetailsInfo extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
+        Row(
+          children: <Widget>[
+            GestureDetector(
+            onTap: () => Navigator.pop(context),
+            child: Icon(Icons.arrow_back, color: Colors.white, size: 18,)
+            ),
+          SizedBox(width: 10,),
+          Text('Candidates details', style: textStyling(18, FontWeight.bold),),
+          ],
+        ),
+        SizedBox(height: 30),
         Text(
           //* Name of the employee
           name,
-          style: textStyling(20, FontWeight.bold),
+          style: textStyling(25, FontWeight.bold),
         ),
         SizedBox(
           height: MediaQuery.of(context).size.height / 30,
@@ -54,7 +65,7 @@ class CandidatesDetailsInfo extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     'Created in',
-                    style: textStyling(17, FontWeight.normal),
+                    style: textStyling(18, FontWeight.normal),
                   ),
                   Text(
                     date,
@@ -70,7 +81,7 @@ class CandidatesDetailsInfo extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     'Points earned',
-                    style: textStyling(17, FontWeight.normal),
+                    style: textStyling(18, FontWeight.normal),
                   ),
                   Text(
                     points.toString(),
@@ -82,29 +93,30 @@ class CandidatesDetailsInfo extends StatelessWidget {
         SizedBox(
           height: 40,
         ),
-        Row(
-          //*Steps information
+        Row( //*Steps information
           children: <Widget>[
             Text( //* Left side
               'Completed steps',
-              style: textStyling(20, FontWeight.bold),
+              style: textStyling(23, FontWeight.bold),
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width / 4,
             ),
             Text( //* Right side
               'Points',
-              style: textStyling(20, FontWeight.bold),
+              style: textStyling(23, FontWeight.bold),
             ),
           ],
         ),
-        SizedBox(height: 20),
-        ListView.builder(
+        ListView.builder( //TODO: Refactor to align the columns
           shrinkWrap: true,
           itemCount: steps.length,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(
+                right: 10, //!! Remove when addign the alignment with columns
+                bottom: 10, 
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -114,13 +126,13 @@ class CandidatesDetailsInfo extends StatelessWidget {
                       SizedBox(width: 5),
                       Text(
                         steps[index]['step'],
-                        style: textStyling(19, FontWeight.normal),
+                        style: textStyling(20, FontWeight.normal),
                       ),
                     ],
                   ),
                   Text( //*Right side
-                    '+${steps[index]['points'.toString()]}',
-                    style: textStyling(19, FontWeight.normal),
+                    '+ ${steps[index]['points'.toString()]}',
+                    style: textStyling(20, FontWeight.bold),
                   ),
                 ],
               ),
@@ -142,4 +154,6 @@ class CandidatesDetailsInfo extends StatelessWidget {
   Icon isVerified(bool value){
     return value ? Icon(Icons.check_circle) : Icon(Icons.check_circle_outline);
   }
+
+
 }
