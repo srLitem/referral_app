@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:referral_app/widgets/header_back.dart';
 
 class CandidatesDetailsInfo extends StatelessWidget {
   @required
-  String name;
+  final String name;
   @required
-  int points;
+  final int points;
   @required
   var date;
 
@@ -37,16 +38,7 @@ class CandidatesDetailsInfo extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Row(
-          children: <Widget>[
-            GestureDetector(
-            onTap: () => Navigator.pop(context),
-            child: Icon(Icons.arrow_back, color: Colors.white, size: 18,)
-            ),
-          SizedBox(width: 10,),
-          Text('Candidates details', style: textStyling(18, FontWeight.bold),),
-          ],
-        ),
+        HeaderBack('Candidates'),
         SizedBox(height: 30),
         Text(
           //* Name of the employee
@@ -143,7 +135,7 @@ class CandidatesDetailsInfo extends StatelessWidget {
     );
   }
 
-  TextStyle textStyling(double size, FontWeight weight) {
+  TextStyle textStyling(double size, FontWeight weight) { //TODO: Make a file or add theme
     return TextStyle(
       color: Colors.white,
       fontWeight: weight,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:referral_app/widgets/candidates/main_page/candidates.dart';
 import 'package:referral_app/widgets/candidates/main_page/candidates_list_page.dart';
+import 'package:referral_app/widgets/rewards/main_page/rewards.dart';
+import 'package:referral_app/widgets/rewards/main_page/rewards_list_page.dart';
 
 class Structure extends StatefulWidget {
   @override
@@ -90,13 +92,47 @@ class _StructureState extends State<Structure> {
       backgroundColor: Color.fromRGBO(55, 120, 255, 1),
     ),
     ];
+    List<Rewards> mock_rewards = [ //!Mock data
+    Rewards(
+      picture: 'https://www.pets4homes.co.uk/images/articles/4229/pugs-and-eye-disorders-recognising-theres-a-problem-595b4a467850f.jpg',
+      name: 'Rewarderina',
+      points: 150,
+      description: 'Besides its weird appearence, this dog is a lil beauty, don\'t ya think?',
+    ),
+    Rewards(
+      picture: 'https://i.picsum.photos/id/179/200/200.jpg',
+      name: 'Rewardona',
+      description: 'Besides its weird appearence, this dog is a lil beauty, don\'t ya think?',
+      points: 200,
+    ),
+    Rewards(
+      picture: 'https://i.picsum.photos/id/789/200/200.jpg',
+      name: 'Rewarkis',
+      points: 300,
+      description: 'Besides its weird appearence, this dog is a lil beauty, don\'t ya think?',
+    ),
+    Rewards(
+      picture: 'https://i.picsum.photos/id/350/200/200.jpg',
+      name: 'Reward',
+      points: 400,
+      description: 'Besides its weird appearence, this dog is a lil beauty, don\'t ya think?',
+    ),
+    Rewards(
+      picture: 'https://i.picsum.photos/id/577/200/200.jpg',
+      name: 'Rewardtron',
+      points: 500,
+      description: 'Besides its weird appearence, this dog is a lil beauty, don\'t ya think?',
+    ),
+    ];
     List<Widget> list = [
       //*Array with all the possible pages
       CandidatesListPage(
         candidates: mock_candidates,
       ),
       CandidatesListPage(), // !! Mock page to show something, must change
-      CandidatesListPage(), // !! Mock page to show something, must change
+      RewardsListPage(
+        rewards: mock_rewards,
+      ),
       CandidatesListPage(), // !! Mock page to show something, must change
     ];
     return list[index];
