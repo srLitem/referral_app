@@ -15,47 +15,52 @@ class RewardsDetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Image.asset(
-          'assets/img/pug.jpg',
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            top: 30,
-            left: 30,
-            right: 30,
+    return Scaffold(
+        body: Stack(
+        children: <Widget>[
+          Image.asset(
+            'assets/img/pug.jpg',
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              HeaderBack('Shop details'),
-              SizedBox(height: 40),
-              Text(
-                name,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+          Container(
+            decoration: BoxDecoration(color: Colors.black.withOpacity(.5)),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 30,
+              left: 30,
+              right: 30,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                HeaderBack('Shop details'),
+                SizedBox(height: 40),
+                Text(
+                  name,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
+              ],
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              height: MediaQuery.of(context).size.height/1.5,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
                 ),
-              )
-            ],
-          ),
-        ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: Container(
-            height: MediaQuery.of(context).size.height/1.5,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(30),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

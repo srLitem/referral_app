@@ -31,12 +31,12 @@ class Header extends StatelessWidget {
               Row(children: <Widget>[ //*Balance and wallet icon
                 Icon(
                   Icons.account_balance_wallet,
-                  color: Theme.of(context).primaryColor,
+                  color: Color.fromRGBO(75, 40, 195, 1),
                 ),
                 Text(
                   '$points points',
                   style: TextStyle(
-                    color: Theme.of(context).primaryColor,
+                    color: Color.fromRGBO(75, 40, 195, 1),
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
                   ),

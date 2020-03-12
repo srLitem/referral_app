@@ -13,7 +13,7 @@ class CandidatesDetailsInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List steps = [ //!! MOCK DATE, REMOVE WHEN USING REAL DATA
+    List steps = [ //!! MOCK DATA, REMOVE WHEN USING REAL DATA
       {
         'step': 'Registration',
         'is_completed': true,
@@ -83,20 +83,20 @@ class CandidatesDetailsInfo extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 40,
+          height: 50,
         ),
         Row( //*Steps information
           children: <Widget>[
             Text( //* Left side
               'Completed steps',
-              style: textStyling(23, FontWeight.bold),
+              style: textStyling(20, FontWeight.bold),
             ),
             SizedBox(
-              width: MediaQuery.of(context).size.width / 4,
+              width: MediaQuery.of(context).size.width / 3.8,
             ),
             Text( //* Right side
               'Points',
-              style: textStyling(23, FontWeight.bold),
+              style: textStyling(20, FontWeight.bold),
             ),
           ],
         ),
@@ -144,7 +144,7 @@ class CandidatesDetailsInfo extends StatelessWidget {
   }
 
   Icon isVerified(bool value){
-    return value ? Icon(Icons.check_circle) : Icon(Icons.check_circle_outline);
+    return value ? Icon(Icons.check_circle, color: Colors.white, size: 28,) : Icon(Icons.check_circle_outline, color: Colors.white, size: 28,);
   }
 
 
