@@ -3,7 +3,7 @@ import 'package:referral_app/widgets/header.dart';
 import 'package:referral_app/widgets/rewards/main_page/rewards.dart';
 
 class RewardsListPage extends StatelessWidget {
-  List<Rewards> rewards;
+  final List<Rewards> rewards;
   
   RewardsListPage({this.rewards});
 

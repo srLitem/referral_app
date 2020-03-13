@@ -7,7 +7,7 @@ class CandidatesDetailsInfo extends StatelessWidget {
   @required
   final int points;
   @required
-  var date;
+  final String date;
 
   CandidatesDetailsInfo({this.name, this.points, this.date});
 

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Header extends StatelessWidget {
-  @required String title = 'Screen';
-  @required int points = 0;
+  @required
+  final String title;
+  @required
+  final int points;
 
   Header(this.title, this.points);
 
@@ -28,7 +30,8 @@ class Header extends StatelessWidget {
                   fontSize: 20,
                 ),
               ),
-              Row(children: <Widget>[ //*Balance and wallet icon
+              Row(children: <Widget>[
+                //*Balance and wallet icon
                 Icon(
                   Icons.account_balance_wallet,
                   color: Color.fromRGBO(75, 40, 195, 1),

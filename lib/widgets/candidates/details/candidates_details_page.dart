@@ -3,13 +3,13 @@ import 'package:referral_app/widgets/candidates/details/candidates_details_info.
 
 class CandidatesDetailsPage extends StatelessWidget {
   @required
-  String name;
+  final String name;
   @required
-  Color backColor;
+  final Color backColor;
   @required
-  int points;
+  final int points;
   @required
-  var date;
+  final String date;
 
   CandidatesDetailsPage({this.name, this.backColor, this.points, this.date});
 

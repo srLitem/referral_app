@@ -10,18 +10,18 @@ class Structure extends StatefulWidget {
 }
 
 class _StructureState extends State<Structure> {
-  int _index_page = 0; //Start the app in candidates
+  int _indexPage = 0; //Start the app in candidates
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomPadding: false, //*Avoids the keyboard from pushing the widgets on the screen
-        body: bottomList(_index_page),
+        body: bottomList(_indexPage),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           onTap: onTapped, //Calling the function to change the index
-          currentIndex: _index_page,
+          currentIndex: _indexPage,
           selectedItemColor: Colors.green,
           elevation: 8,
           items: [
@@ -50,12 +50,12 @@ class _StructureState extends State<Structure> {
   void onTapped(int index) {
     //*Function to change the screen with the BottomBar
     setState(() {
-      _index_page = index;
+      _indexPage = index;
     });
   }
 
   Widget bottomList(int index) {
-    List<Candidates> mock_candidates = [ //!Mock data
+    List<Candidates> mockCandidates = [ //!Mock data
     Candidates( 
       date: '26 Nov',
       name: 'Ricardo Van Lemmen',
@@ -92,7 +92,7 @@ class _StructureState extends State<Structure> {
       backgroundColor: Color.fromRGBO(94, 210, 144, 1),
     ),
     ];
-    List<Rewards> mock_rewards = [ //!Mock data
+    List<Rewards> mockRewards = [ //!Mock data
     Rewards(
       picture: 'https://www.pets4homes.co.uk/images/articles/4229/pugs-and-eye-disorders-recognising-theres-a-problem-595b4a467850f.jpg',
       name: 'Rewarderina',
@@ -127,11 +127,11 @@ class _StructureState extends State<Structure> {
     List<Widget> list = [
       //*Array with all the possible pages
       CandidatesListPage(
-        candidates: mock_candidates,
+        candidates: mockCandidates,
       ),
       CandidatesListPage(), // !! Mock page to show something, must change
       RewardsListPage(
-        rewards: mock_rewards,
+        rewards: mockRewards,
       ),
       CandidatesListPage(), // !! Mock page to show something, must change
     ];

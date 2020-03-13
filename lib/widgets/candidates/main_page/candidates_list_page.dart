@@ -3,7 +3,7 @@ import 'package:referral_app/widgets/candidates/main_page/candidates.dart';
 import 'package:referral_app/widgets/header.dart';
 
 class CandidatesListPage extends StatelessWidget {
-  List<Candidates> candidates;
+  final List<Candidates> candidates;
   
   CandidatesListPage({this.candidates});
 

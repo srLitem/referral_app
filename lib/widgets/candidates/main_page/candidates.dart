@@ -2,33 +2,42 @@ import 'package:flutter/material.dart';
 import 'package:referral_app/widgets/candidates/details/candidates_details_page.dart';
 
 class Candidates extends StatefulWidget {
-  @required var date;
-  @required String name;
-  @required var step;
-  @required int points;
-  @required Color backgroundColor;
+  @required
+  final String date;
+  @required
+  final String name;
+  @required
+  final String step;
+  @required
+  final int points;
+  @required
+  final Color backgroundColor;
 
-  Candidates( //!! This might change according to the designs
-      {this.name, this.points, this.step, this.date, this.backgroundColor});
+  Candidates(
+      //!! This might change according to the designs
+      {this.name,
+      this.points,
+      this.step,
+      this.date,
+      this.backgroundColor});
 
   @override
   _CandidatesState createState() => _CandidatesState();
 }
 
 class _CandidatesState extends State<Candidates> {
-
-  void goToDetails(){ //* Allows to open de details page of the selected candidate
+  void goToDetails() {
+    //* Allows to open de details page of the selected candidate
     Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) =>
-            CandidatesDetailsPage(
-              name: widget.name,
-              backColor: widget.backgroundColor,
-              points: widget.points,
-              date: widget.date,
-              ),
-          ),
-        );
+      MaterialPageRoute(
+        builder: (context) => CandidatesDetailsPage(
+          name: widget.name,
+          backColor: widget.backgroundColor,
+          points: widget.points,
+          date: widget.date,
+        ),
+      ),
+    );
   }
 
   @override
