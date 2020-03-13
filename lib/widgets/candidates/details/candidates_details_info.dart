@@ -40,14 +40,16 @@ class CandidatesDetailsInfo extends StatelessWidget {
       children: <Widget>[
         HeaderBack('Candidates'),
         SizedBox(height: 30),
+        //* Name of the employee
         Text(
-          //* Name of the employee
           name,
           style: textStyling(25, FontWeight.bold),
         ),
         SizedBox(
           height: MediaQuery.of(context).size.height / 30,
         ),
+        //* Here we are showing the information of the creation date
+        //* and points of the selected employee
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
@@ -85,6 +87,9 @@ class CandidatesDetailsInfo extends StatelessWidget {
         SizedBox(
           height: 50,
         ),
+        //* Here we show the list of the steps that the employye has/hasn't
+        //* completed along with the amount of earned points
+        //* ListBuilder to generate the dynamic steps according to the data
         Row( //*Steps information
           children: <Widget>[
             Text( //* Left side
