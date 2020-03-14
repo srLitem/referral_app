@@ -31,7 +31,7 @@ class CandidatesDetailsPage extends StatelessWidget {
     );
   }
 
-  TextStyle textStyling(double size, FontWeight weight) {
+  TextStyle textStyling(double size, FontWeight weight) { //TODO: Change for theme picker
     return TextStyle(
       color: Colors.white,
       fontWeight: weight,

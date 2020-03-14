@@ -4,6 +4,7 @@ import 'package:referral_app/widgets/candidates/main_page/candidates_list_page.d
 import 'package:referral_app/widgets/rewards/main_page/rewards.dart';
 import 'package:referral_app/widgets/rewards/main_page/rewards_list_page.dart';
 
+//* Widget to paint the basic structure of the app in a clenaer way
 class Structure extends StatefulWidget {
   @override
   _StructureState createState() => _StructureState();
@@ -16,8 +17,9 @@ class _StructureState extends State<Structure> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        resizeToAvoidBottomPadding: false, //*Avoids the keyboard from pushing the widgets on the screen
+        resizeToAvoidBottomPadding: false, 
         body: bottomList(_indexPage),
+        //* BottomNavigationBar with the lits of available screens
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           onTap: onTapped, //Calling the function to change the index
@@ -47,13 +49,14 @@ class _StructureState extends State<Structure> {
     );
   }
 
+  //*Function to change the screen with the BottomBar
   void onTapped(int index) {
-    //*Function to change the screen with the BottomBar
     setState(() {
       _indexPage = index;
     });
   }
 
+  //* Function to return the list of available screens
   Widget bottomList(int index) {
     List<Candidates> mockCandidates = [ //!Mock data
     Candidates( 

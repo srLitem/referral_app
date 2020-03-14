@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:referral_app/widgets/candidates/main_page/candidates.dart';
 import 'package:referral_app/widgets/header.dart';
 
+//* Widget used to show the list of the candidates in the main page of the app
 class CandidatesListPage extends StatelessWidget {
   final List<Candidates> candidates;
   
@@ -10,6 +11,7 @@ class CandidatesListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      //* List generated with the candidates data List
       children: <Widget>[
         ListView.builder(
           padding: EdgeInsets.only(
@@ -22,6 +24,7 @@ class CandidatesListPage extends StatelessWidget {
           return candidates[index];
          },
         ),
+        //* Header data and position in the stack
         Header('Candidates', 3000),
       ],
     );

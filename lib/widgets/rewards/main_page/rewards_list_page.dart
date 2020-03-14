@@ -11,6 +11,7 @@ class RewardsListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
+        //* List generated according to the number of rewards
         ListView.builder(
           padding: EdgeInsets.only(
             top: MediaQuery.of(context).size.height / 10,

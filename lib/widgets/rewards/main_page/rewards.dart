@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:referral_app/widgets/rewards/details/rewards_details_page.dart';
 
+//* Widget created to paint a reward
 class Rewards extends StatefulWidget {
   @required
   final String picture;
@@ -42,6 +43,7 @@ class _RewardsState extends State<Rewards> {
         ),
         child: Row(
           children: <Widget>[
+            //* Image of the reward
             Container(
               width: 100,
               height: 100,
@@ -60,8 +62,8 @@ class _RewardsState extends State<Rewards> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
+                  //*Name of the reward
                   Text(
-                    //*Name of the reward
                     widget.name,
                     style: TextStyle(
                         color: Colors.black,
@@ -72,8 +74,8 @@ class _RewardsState extends State<Rewards> {
                   SizedBox(
                     height: 10,
                   ),
+                   //*Points price of the reward
                   Text(
-                    //*Points price of the reward
                     '${widget.points} points',
                     style: TextStyle(
                         color: Colors.green,
@@ -88,8 +90,9 @@ class _RewardsState extends State<Rewards> {
       ),
     );
   }
-
-    void goToDetails(){ //* Allows to open de details page of the selected candidate
+    //* Function to go to the rewards details page
+    //TODO: Implement named route
+    void goToDetails(){ 
     Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) =>

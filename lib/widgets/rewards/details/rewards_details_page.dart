@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:referral_app/widgets/header_back.dart';
 
+//* Widget to return the datils page of a reward
 class RewardsDetailsPage extends StatelessWidget {
   @required
   final String picture;
@@ -18,9 +19,11 @@ class RewardsDetailsPage extends StatelessWidget {
     return Scaffold(
         body: Stack(
         children: <Widget>[
+          //* Background image
           Image.asset(
             'assets/img/pug.jpg',
           ),
+          //* Black opacity added to the image
           Container(
             decoration: BoxDecoration(color: Colors.black.withOpacity(.5)),
           ),
@@ -35,6 +38,7 @@ class RewardsDetailsPage extends StatelessWidget {
               children: <Widget>[
                 HeaderBack('Shop details'),
                 SizedBox(height: 40),
+                //* Name of the reward
                 Text(
                   name,
                   style: TextStyle(
@@ -46,6 +50,7 @@ class RewardsDetailsPage extends StatelessWidget {
               ],
             ),
           ),
+          //* Information box
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(

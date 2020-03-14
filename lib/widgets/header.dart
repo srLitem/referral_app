@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+//* Class to show the basic header with the name of the page
+//* and the amount of points the user has
+
 class Header extends StatelessWidget {
   @required
   final String title;
@@ -23,23 +26,24 @@ class Header extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
+              //* Title of the header
               Text(
-                title, //* Title of the header
+                title, 
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                 ),
               ),
-              Row(children: <Widget>[
-                //*Balance and wallet icon
+              //*Balance and wallet icon
+              Row(children: <Widget>[   
                 Icon(
                   Icons.account_balance_wallet,
-                  color: Color.fromRGBO(75, 40, 195, 1),
+                  color: Color.fromRGBO(75, 40, 195, 1), //TODO: Change for theme picker
                 ),
                 Text(
                   '$points points',
                   style: TextStyle(
-                    color: Color.fromRGBO(75, 40, 195, 1),
+                    color: Color.fromRGBO(75, 40, 195, 1), //TODO: Change for theme picker
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
                   ),

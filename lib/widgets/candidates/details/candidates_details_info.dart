@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:referral_app/widgets/header_back.dart';
 
+//*Widget to show the information of the details page
+//* Of each one of the candidates
 class CandidatesDetailsInfo extends StatelessWidget {
   @required
   final String name;
@@ -8,12 +10,14 @@ class CandidatesDetailsInfo extends StatelessWidget {
   final int points;
   @required
   final String date;
+  //! The steps list should be added here when receiving it from the backend
 
   CandidatesDetailsInfo({this.name, this.points, this.date});
 
   @override
   Widget build(BuildContext context) {
-    List steps = [ //!! MOCK DATA, REMOVE WHEN USING REAL DATA
+    //!! MOCK DATA, REMOVE WHEN USING REAL DATA
+    List steps = [
       {
         'step': 'Registration',
         'is_completed': true,
@@ -38,6 +42,7 @@ class CandidatesDetailsInfo extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
+        //* Usage of the header to go to the previous page
         HeaderBack('Candidates'),
         SizedBox(height: 30),
         //* Name of the employee
@@ -90,34 +95,36 @@ class CandidatesDetailsInfo extends StatelessWidget {
         //* Here we show the list of the steps that the employye has/hasn't
         //* completed along with the amount of earned points
         //* ListBuilder to generate the dynamic steps according to the data
-        Row( //*Steps information
+        Row(
+          //*Steps information
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Text( //* Left side
+            Text(
+              //* Left side
               'Completed steps',
               style: textStyling(20, FontWeight.bold),
             ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width / 3.8,
-            ),
-            Text( //* Right side
+            Text(
+              //* Right side
               'Points',
               style: textStyling(20, FontWeight.bold),
             ),
           ],
         ),
-        ListView.builder( //TODO: Refactor to align the columns
+        ListView.builder(
           shrinkWrap: true,
           itemCount: steps.length,
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.only(
-                right: 10, //!! Remove when addign the alignment with columns
-                bottom: 10, 
+                right: 10,
+                bottom: 10,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Row( //*Left side
+                  Row(
+                    //*Left side of the list
                     children: <Widget>[
                       isVerified(steps[index]['is_completed']),
                       SizedBox(width: 5),
@@ -127,7 +134,8 @@ class CandidatesDetailsInfo extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Text( //*Right side
+                  Text(
+                    //*Right side of the list
                     '+ ${steps[index]['points'.toString()]}',
                     style: textStyling(20, FontWeight.bold),
                   ),
@@ -140,7 +148,7 @@ class CandidatesDetailsInfo extends StatelessWidget {
     );
   }
 
-  TextStyle textStyling(double size, FontWeight weight) { //TODO: Make a file or add theme
+  TextStyle textStyling(double size, FontWeight weight) { //TODO: Change for theme picker
     return TextStyle(
       color: Colors.white,
       fontWeight: weight,
@@ -148,9 +156,19 @@ class CandidatesDetailsInfo extends StatelessWidget {
     );
   }
 
-  Icon isVerified(bool value){
-    return value ? Icon(Icons.check_circle, color: Colors.white, size: 28,) : Icon(Icons.check_circle_outline, color: Colors.white, size: 28,);
+  //* Function to return the correct icon per step
+  //* considering if it is completed or not
+  Icon isVerified(bool value) {
+    return value
+        ? Icon(
+            Icons.check_circle,
+            color: Colors.white,
+            size: 28,
+          )
+        : Icon(
+            Icons.check_circle_outline,
+            color: Colors.white,
+            size: 28,
+          );
   }
-
-
 }

@@ -13,8 +13,9 @@ class Candidates extends StatefulWidget {
   @required
   final Color backgroundColor;
 
+  //!! These fields might change according to the designs
   Candidates(
-      //!! This might change according to the designs
+      
       {this.name,
       this.points,
       this.step,
@@ -28,6 +29,7 @@ class Candidates extends StatefulWidget {
 class _CandidatesState extends State<Candidates> {
   void goToDetails() {
     //* Allows to open de details page of the selected candidate
+    // TODO: Change for NamedRoutes
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => CandidatesDetailsPage(
@@ -42,6 +44,7 @@ class _CandidatesState extends State<Candidates> {
 
   @override
   Widget build(BuildContext context) {
+    //* Widget to redirect users to the candidates details page
     return GestureDetector(
       onTap: goToDetails,
       child: Container(
@@ -51,12 +54,14 @@ class _CandidatesState extends State<Candidates> {
           color: widget.backgroundColor,
           borderRadius: BorderRadius.circular(10),
         ),
+        //* Column to show each candidate element 
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
+                //* Date
                 Text(
                   widget.date,
                   style: TextStyle(
@@ -64,6 +69,7 @@ class _CandidatesState extends State<Candidates> {
                     fontSize: 14.0,
                   ),
                 ),
+                //* # of points
                 Text(
                   '${widget.points.toString()} Points',
                   style: TextStyle(
@@ -74,6 +80,7 @@ class _CandidatesState extends State<Candidates> {
                 ),
               ],
             ),
+            //* Name of the employee
             Text(
               widget.name,
               style: TextStyle(
@@ -85,6 +92,7 @@ class _CandidatesState extends State<Candidates> {
             SizedBox(
               height: 5,
             ),
+            //* Current step of the referral process
             Text(
               widget.step,
               style: TextStyle(

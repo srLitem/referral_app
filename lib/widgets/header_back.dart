@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+//* Widget to allow the users to see the current page and
+//* pop from the current Navigator screen
 class HeaderBack extends StatefulWidget {
   @required
   final String title;
@@ -13,6 +15,7 @@ class HeaderBack extends StatefulWidget {
 class _HeaderBackState extends State<HeaderBack> {
   @override
   Widget build(BuildContext context) {
+    //* Painting the name of the page and the back arrow
     return Row(
           children: <Widget>[
             GestureDetector(
@@ -25,7 +28,7 @@ class _HeaderBackState extends State<HeaderBack> {
         );
   }
 
-  TextStyle textStyling(double size, FontWeight weight) {
+  TextStyle textStyling(double size, FontWeight weight) { //TODO: Change for theme picker
     return TextStyle(
       color: Colors.white,
       fontWeight: weight,
